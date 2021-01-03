@@ -12,5 +12,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kristofer-Henriquez/rate-app-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kristofer-Henriquez/rate-app-backend/issues"
+  },
+  "homepage": "https://github.com/Kristofer-Henriquez/rate-app-backend#readme"
 }
