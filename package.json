@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.5.1"
   },
   "devDependencies": {},
   "scripts": {
@@ -12,5 +13,13 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kristofer-Henriquez/rate-app-backend.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Kristofer-Henriquez/rate-app-backend/issues"
+  },
+  "homepage": "https://github.com/Kristofer-Henriquez/rate-app-backend#readme"
 }
