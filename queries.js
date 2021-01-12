@@ -8,6 +8,15 @@ const pool = new Pool({
   port: 5432,
 });
 
+// Sequelize
+// const { Sequelize } = require('sequelize');
+// Passing a connection URI
+// const sequelize = new Sequelize('postgres://user:me:5432/professors');
+// Var Professor = sequelize.define('professor', {'name', 'school', 'title', 'department'}));
+// Var Review = sequelize.define('review');
+// Professor.hasMany(Reviews);
+// Reviews.belongsTo(Professor);
+
 // Professors
 // index
 const getProfessors = (request, response) => {
@@ -27,7 +36,14 @@ const getProfessorById = (request, response) => {
     if (error) {
       throw error;
     }
-    response.status(200).json(results.rows);
+    const professor = results.rows[0];
+    pool.query('SELECT * FROM reviews WHERE professors_id = $1', [id], (error, results) => {
+      if (error) {
+        throw error;
+      }
+      professor.reviews = results.rows;
+      response.status(200).json(professor);
+    });
   });
 };
 
@@ -92,6 +108,15 @@ const getReviewById = (request, response) => {
     if (error) {
       throw error;
     }
+    const review = results.rows[0];
+    pool.query('SELECT * FROM professors WHERE professors.id = review.professors_id', [id], (error, results) => {
+      if (error) {
+        throw error;
+      }
+      review.professors = results.rows;
+      response.status(200).json(review);
+    });
+   
     response.status(200).json(results.rows);
   });
 };
