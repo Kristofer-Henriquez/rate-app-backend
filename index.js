@@ -21,10 +21,13 @@ app.post('/professors', db.createProfessor);
 app.put('/professors/:id', db.updateProfessor);
 app.delete('/professors/:id', db.deleteProfessor);
 
+// Reviews Routes
+app.get('/reviews', db.getReviews);
+app.get('/reviews/:id', db.getReviewById);
+app.post('/reviews', db.createReview);
+app.put('/reviews/:id', db.updateReview);
+app.delete('/reviews/:id', db.deleteReview);
 
-app.get('/', (req, res) => {
-  res.json({ info: 'Node.js, Express, and Postgres API' });
-});
 
 // // may not be needed
 // app.get('/api/reviews/:id', (req, res) => {
