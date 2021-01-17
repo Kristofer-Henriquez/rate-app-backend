@@ -46,7 +46,7 @@ const createProfessor = (request, response) => {
     if (error) {
       throw error;
     }
-    response.status(201).send(`Professor added with ID: ${result.insertId}`);
+    response.status(201).send(`Professor added with ID: ${results.insertId}`);
   });
 };
 
