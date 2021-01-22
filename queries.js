@@ -1,4 +1,4 @@
-
+// const Pool = require('pg');
 const { Pool } = require('pg');
 const pool = new Pool({
   user: 'me',
@@ -7,6 +7,15 @@ const pool = new Pool({
   password: 'password',
   port: 5432,
 });
+
+// Sequelize
+// const { Sequelize } = require('sequelize');
+// Passing a connection URI
+// const sequelize = new Sequelize('postgres://user:me:5432/professors');
+// Var Professor = sequelize.define('professor', {'name', 'school', 'title', 'department'}));
+// Var Review = sequelize.define('review');
+// Professor.hasMany(Reviews);
+// Reviews.belongsTo(Professor);
 
 // Professors
 // index
