@@ -94,21 +94,18 @@ const getReviews = (request, response) => {
 // show 
 const getReviewById = (request, response) => {
   const id = parseInt(request.params.id);
-
   pool.query('SELECT * FROM reviews WHERE id = $1', [id], (error, results) => {
     if (error) {
       throw error;
     }
     const review = results.rows[0];
-    pool.query('SELECT * FROM professors WHERE professors.id = review.professors_id', [id], (error, results) => {
+    pool.query('SELECT * FROM professors WHERE professors.id = $1', [review.professors_id], (error, results) => {
       if (error) {
         throw error;
       }
-      review.professors = results.rows;
+      review.professor = results.rows[0];
       response.status(200).json(review);
     });
-   
-    response.status(200).json(results.rows);
   });
 };
 
