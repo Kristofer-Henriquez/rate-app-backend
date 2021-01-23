@@ -1,4 +1,4 @@
-// const Pool = require('pg');
+
 const { Pool } = require('pg');
 const pool = new Pool({
   user: 'me',
@@ -8,19 +8,10 @@ const pool = new Pool({
   port: 5432,
 });
 
-// Sequelize
-// const { Sequelize } = require('sequelize');
-// Passing a connection URI
-// const sequelize = new Sequelize('postgres://user:me:5432/professors');
-// Var Professor = sequelize.define('professor', {'name', 'school', 'title', 'department'}));
-// Var Review = sequelize.define('review');
-// Professor.hasMany(Reviews);
-// Reviews.belongsTo(Professor);
-
 // Professors
 // index
 const getProfessors = (request, response) => {
-  pool.query('SELECT * FROM professors ORDER BY id ASC', (error, results) => {
+  pool.query("SELECT professors.*, AVG(reviews.rating) FROM professors FULL OUTER JOIN reviews ON professors.id = reviews.professors_id GROUP BY professors.id ORDER BY id ASC;", (error, results) => {
     if (error) {
       throw error;
     }
