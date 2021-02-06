@@ -13,15 +13,6 @@ const pool = new Pool({
   }
 });
 
-// const { Pool } = require('pg');
-// const pool = new Pool({
-//   user: 'me',
-//   host: 'localhost',
-//   database: 'professors',
-//   password: 'password',
-//   port: 5432,
-// });
-
 // Professors
 // index
 const getProfessors = (request, response) => {
