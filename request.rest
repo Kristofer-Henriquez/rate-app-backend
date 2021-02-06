@@ -6,16 +6,17 @@ POST http://localhost:3000/users
 Content-Type: application/json
 
 {
-  "name": "dave",
+  "username": "dave",
+  "email": "dave@example.com",
   "password": "password"
 }
 
 ###
 
-POST http://localhost:3000/users/login
+POST http://localhost:3000/login
 Content-Type: application/json
 
 {
-  "name": "dave",
+  "username": "dave",
   "password": "password"
 }
