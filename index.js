@@ -34,4 +34,5 @@ app.post('/reviews', db.createReview);
 app.put('/reviews/:id', db.updateReview);
 app.delete('/reviews/:id', db.deleteReview);
 
+app.use(express.static('dist'));
 app.listen(port, () => console.log(`listening on port ${port}...`));
