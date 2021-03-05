@@ -35,4 +35,5 @@ app.put('/api/reviews/:id', db.updateReview);
 app.delete('/api/reviews/:id', db.deleteReview);
 
 app.use(express.static('dist'));
+app.use("/*", express.static("dist"));
 app.listen(port, () => console.log(`listening on port ${port}...`));
