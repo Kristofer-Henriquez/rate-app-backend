@@ -21,18 +21,18 @@ app.use(
 
 
 // Professor Routes
-app.get('/professors', db.getProfessors);
-app.get('/professors/:id', db.getProfessorById);
-app.post('/professors', db.createProfessor);
-app.put('/professors/:id', db.updateProfessor);
-app.delete('/professors/:id', db.deleteProfessor);
+app.get('/api/professors', db.getProfessors);
+app.get('/api/professors/:id', db.getProfessorById);
+app.post('/api/professors', db.createProfessor);
+app.put('/api/professors/:id', db.updateProfessor);
+app.delete('/api/professors/:id', db.deleteProfessor);
 
 // Reviews Routes
-app.get('/reviews', db.getReviews);
-app.get('/reviews/:id', db.getReviewById);
-app.post('/reviews', db.createReview);
-app.put('/reviews/:id', db.updateReview);
-app.delete('/reviews/:id', db.deleteReview);
+app.get('/api/reviews', db.getReviews);
+app.get('/api/reviews/:id', db.getReviewById);
+app.post('/api/reviews', db.createReview);
+app.put('/api/reviews/:id', db.updateReview);
+app.delete('/api/reviews/:id', db.deleteReview);
 
 app.use(express.static('dist'));
 app.listen(port, () => console.log(`listening on port ${port}...`));
