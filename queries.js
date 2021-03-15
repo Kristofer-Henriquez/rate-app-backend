@@ -10,9 +10,9 @@ const connectionString = isProduction
 
 const pool = new Pool({
   connectionString: connectionString,
-  // ssl: {
-  //   rejectUnauthorized: false
-  // }
+  ssl: {
+    rejectUnauthorized: false
+  }
 });
 
 // Professors
